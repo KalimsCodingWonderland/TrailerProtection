@@ -1,0 +1,39 @@
+Privacy Policy for Trailer Protection Extension
+
+Effective Date: 1/12/2025
+
+1. Introduction
+Thank you for using the Trailer Protection for YouTube Extension. This privacy policy explains how I collect, use, and protect your information when you use my Extension. By using the Extension, you agree to the collection and use of information in accordance with this policy.
+
+2. Information I Collect
+User Activity: I track actions within the Extension exclusively, including when users interact with the Extension to report trailers (e.g., reporting spoilers, amazing trailers, or trailers that show too much).
+
+Website Content: I collect video titles and IDs from YouTube trailers to help users report and flag spoilers, excessive content, or amazing trailers. I do not collect any media content such as videos, images, or sound.
+
+Other Information: No personally identifiable information (such as name, email, or location) is collected. The only data collected is related to user interactions within the Extension.
+
+3. How I Use Your Information
+The information I collect is used solely for the purpose of providing the Trailer Protection Extension's functionality:
+
+To enable users to report trailers as "Amazing," "Too Much," or containing "Spoilers."
+To display alerts to users based on trailer reports.
+To store and track user interactions to improve the user experience.
+I do not sell, rent, or trade your information to third parties.
+
+4. Data Retention
+I retain the collected data (such as trailer reports and video titles) for as long as needed to provide the services of the Extension. You can request to have your data removed by contacting me at [Your Contact Email].
+
+5. Sharing Your Information
+I do not share your information with third parties except for the purpose of processing data for the functionality of the Extension, such as sending the reports to my backend system (hosted at [your domain, e.g., trailer-protection.onrender.com]).
+
+6. Security
+I take reasonable precautions to protect your data. However, please note that no method of transmission over the internet is 100% secure. I cannot guarantee the absolute security of your data.
+
+7. Changes to This Privacy Policy
+I may update this Privacy Policy occasionally. I will notify you of any changes by posting the new policy on this page. I encourage you to review this policy periodically.
+
+8. Contact Me
+If you have any questions about this Privacy Policy, please contact me at:
+
+kalimqazi05@gmail.com
+
