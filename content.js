@@ -13,7 +13,7 @@
     const videoID = getVideoID(window.location.href);
     const videoTitle = getVideoTitle();
 
-    const response = await fetch(`http://127.0.0.1:5000/check_trailer`, {
+    const response = await fetch(`https://trailer-protection.onrender.com/check_trailer`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ID: videoID, title: videoTitle })

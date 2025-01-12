@@ -16,7 +16,7 @@ document.getElementById("reportAmazingTrailer").addEventListener("click", async 
         return;
     }
 
-    await fetch("http://127.0.0.1:5000/report_trailer", {
+    await fetch("https://trailer-protection.onrender.com/report_trailer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ID: videoID, title: videoTitle, type: "amazing" })
@@ -35,7 +35,7 @@ document.getElementById("reportTooMuch").addEventListener("click", async () => {
         return;
     }
 
-    await fetch("http://127.0.0.1:5000/report_trailer", {
+    await fetch("https://trailer-protection.onrender.com/report_trailer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ID: videoID, title: videoTitle, type: "too_much" })
@@ -54,7 +54,7 @@ document.getElementById("reportSpoiler").addEventListener("click", async () => {
         return;
     }
 
-    await fetch("http://127.0.0.1:5000/report_trailer", {
+    await fetch("https://trailer-protection.onrender.com/report_trailer", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ID: videoID, title: videoTitle, type: "spoiler" })

@@ -10,7 +10,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         console.log("Received spoiler report:", message.title);
 
         // Send the report to the Python API
-        fetch("http://127.0.0.1:5000/report_spoiler", {
+        fetch("https://trailer-protection.onrender.com/report_spoiler", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ title: message.title }),
