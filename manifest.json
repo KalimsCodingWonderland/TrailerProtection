@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Trailer Protection",
+  "description": "Allows users to flag movie trailers through these three options. An amazing trailer that does its job. A trailer that shows to much of the film. Or a trailer that contains blatant spoilers.",
+  "version": "1.0",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "TrailerProtection.png"
+  }
+}
