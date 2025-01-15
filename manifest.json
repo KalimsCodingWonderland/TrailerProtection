@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "Trailer Protection",
-  "description": "Allows users to flag movie trailers through these three options. An amazing trailer that does its job. A trailer that shows to much of the film. Or a trailer that contains blatant spoilers.",
+  "description": "Allows users to flag movie trailers as amazing, showing too much, or containing spoilers. Then it will alert users of the reports.",
   "version": "1.0",
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["activeTab"],
   "background": {
     "service_worker": "background.js"
   },
