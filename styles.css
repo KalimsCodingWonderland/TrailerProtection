@@ -18,7 +18,7 @@
     top: 100px;
     left: 10px;
     background-color: orange;
-    color: white;
+    color: #000000;
     padding: 10px;
     z-index: 1000;
     font-size: 16px;
@@ -30,7 +30,7 @@
     top: 50px;
     left: 10px;
     background-color: #00ff17;
-    color: white;
+    color: #000000;
     padding: 10px;
     z-index: 1000;
     font-size: 16px;
@@ -122,6 +122,7 @@ body {
     color: white;
 }
 
+/* Specific styles for auth and report buttons */
 #auth-container button, #report-container button {
     width: 95%;
     font-size: 1em;
@@ -129,18 +130,25 @@ body {
     border-radius: 8px;
 }
 
+/* Hover Effects */
 #popup-container button:hover, #auth-container button:hover, #report-container button:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
 }
 
+/* Report Buttons: White background with Black text */
 #report-container button {
-    background-color: #28a745; /* Green for report buttons */
+    background-color: #ffffff; /* White background */
+    color: #000000;            /* Black text */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Optional: darker shadow for contrast */
 }
 
-#logout-button {
-    background-color: #dc3545; /* Red for logout */
+/* Logout Button: Red background with Black text */
+#report-container #logout-button {
+    background-color: #dc3545; /* Red background */
+    color: #000000;            /* Black text */
 }
+
 
 /* Link Styles */
 #auth-container a {

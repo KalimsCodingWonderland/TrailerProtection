@@ -1,4 +1,4 @@
-// popup.js with encrpytion
+// popup.js with encryption
 
 // Utility function to switch forms
 function showForm(form) {
@@ -78,6 +78,7 @@ document.getElementById('login-button').addEventListener('click', async () => {
         if (response.status === 200) {
             // Store token in Chrome storage
             chrome.storage.local.set({ token: data.token }, () => {
+                console.log("Token stored:", data.token); // Debugging line (optional)
                 showReport();
             });
         } else {
@@ -100,6 +101,7 @@ document.getElementById('logout-button').addEventListener('click', () => {
 function getToken() {
     return new Promise((resolve) => {
         chrome.storage.local.get(['token'], (result) => {
+            console.log("Token retrieved:", result.token); // Debugging line (optional)
             resolve(result.token);
         });
     });
@@ -134,7 +136,8 @@ async function reportTrailer(type) {
         });
 
         const data = await response.json();
-        if (response.status === 200) {
+
+        if (response.ok) { // Equivalent to response.status in the 200 range
             alert(`Trailer report submitted for ${type.replace('_', ' ')}!`);
         } else if (response.status === 401) {
             alert("Session expired. Please log in again.");

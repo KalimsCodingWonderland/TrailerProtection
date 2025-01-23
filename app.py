@@ -1,5 +1,5 @@
 # app.py
-#Encryption
+# Encryption
 
 import os
 import pymongo
@@ -47,15 +47,24 @@ def token_required(f):
                 token = parts[1]
 
         if not token:
+            app.logger.warning("Token is missing in the request headers.")
             return jsonify({'message': 'Token is missing!'}), 401
 
         try:
             data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
             current_user = users_collection.find_one({"_id": pymongo.ObjectId(data['user_id'])})
             if not current_user:
+                app.logger.warning(f"User not found for user_id: {data['user_id']}")
                 raise Exception('User not found')
+            app.logger.info(f"Token successfully validated for user_id: {data['user_id']}")
+        except jwt.ExpiredSignatureError:
+            app.logger.warning("Token has expired.")
+            return jsonify({'message': 'Token has expired!'}), 401
+        except jwt.InvalidTokenError:
+            app.logger.warning("Invalid token.")
+            return jsonify({'message': 'Token is invalid!'}), 401
         except Exception as e:
-            print(f"Token verification failed: {e}")
+            app.logger.error(f"Token verification failed: {e}")
             return jsonify({'message': 'Token is invalid!'}), 401
 
         return f(current_user, *args, **kwargs)
@@ -113,6 +122,10 @@ def login():
         'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=24)
     }, app.config['SECRET_KEY'], algorithm="HS256")
 
+    # Ensure token is a string
+    if isinstance(token, bytes):
+        token = token.decode('utf-8')
+
     return jsonify({'token': token}), 200
 
 
@@ -164,7 +177,7 @@ def report_trailer(current_user):
         return jsonify({"message": f"{report_type.capitalize()} report submitted for trailer!"}), 200
 
     except Exception as e:
-        print(f"Error in report_trailer: {e}")
+        app.logger.error(f"Error in report_trailer: {e}")
         return jsonify({"error": "An error occurred while processing the request"}), 500
 
 
