@@ -1,21 +1,28 @@
 {
   "manifest_version": 3,
-  "name": "Trailer Protection",
-  "description": "Allows users to flag movie trailers as amazing, showing too much, or containing spoilers. Then it will alert users of the reports.",
-  "version": "1.0",
-  "permissions": ["activeTab"],
+  "name": "Trailer Spoiler Checker",
+  "version": "2.0",
+  "description": "Check and report spoilers in YouTube trailers with user authentication.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*"],
-      "js": ["content.js"],
-      "css": ["styles.css"]
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
     }
   ],
   "action": {
-    "default_popup": "popup.html",
-    "default_icon": "TrailerProtection.png"
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
   }
 }

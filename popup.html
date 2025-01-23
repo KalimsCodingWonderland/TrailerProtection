@@ -3,16 +3,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Report Spoiler</title>
+  <title>Trailer Spoiler Checker</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <div id="popup-container">
+  <!-- Authentication Container -->
+  <div id="auth-container">
+    <h1>Trailer Spoiler Checker</h1>
+
+    <!-- Login Form -->
+    <div id="login-form">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <button id="login-button">Login</button>
+      <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+    </div>
+
+    <!-- Registration Form -->
+    <div id="register-form" style="display: none;">
+      <h2>Register</h2>
+      <input type="text" id="register-username" placeholder="Username" required>
+      <input type="email" id="register-email" placeholder="Email" required>
+      <input type="password" id="register-password" placeholder="Password" required>
+      <button id="register-button">Register</button>
+      <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+    </div>
+  </div>
+
+  <!-- Reporting Container -->
+  <div id="report-container" style="display: none;">
     <h1>Make a Trailer Report</h1>
     <button id="reportAmazingTrailer">Report an Amazing Trailer!</button>
     <button id="reportTooMuch">Report a Shows Too Much Trailer!</button>
     <button id="reportSpoiler">Report a Blatant Spoiler Trailer!</button>
+    <button id="logout-button">Logout</button>
   </div>
+
   <script src="popup.js"></script>
 </body>
 </html>
