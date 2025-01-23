@@ -1,7 +1,7 @@
 // background.js
 
 chrome.runtime.onInstalled.addListener(() => {
-    console.log("Trailer Spoiler Checker extension installed!");
+    console.log("Trailer Protection extension installed!");
 });
 
 // Listener for messages from content scripts or popup
