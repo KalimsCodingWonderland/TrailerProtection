@@ -14,7 +14,7 @@
     const videoTitle = getVideoTitle();
 
     try {
-        const response = await fetch("https://your-backend-domain.com/check_trailer", {  // Replace with your actual backend URL
+        const response = await fetch("https://trailer-protection.onrender.com/check_trailer", {  // Replace with your actual backend URL
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ ID: videoID, title: videoTitle })

@@ -18,7 +18,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             }
 
             // Send the report to the Flask API
-            fetch("https://your-backend-domain.com/report_trailer", {  // Replace with your actual backend URL
+            fetch("https://trailer-protection.onrender.com/report_trailer", {  // Replace with your actual backend URL
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

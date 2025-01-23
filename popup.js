@@ -1,4 +1,4 @@
-// popup.js
+// popup.js with encrpytion
 
 // Utility function to switch forms
 function showForm(form) {
