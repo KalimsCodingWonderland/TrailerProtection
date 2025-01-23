@@ -11,6 +11,9 @@ import jwt
 import datetime
 from functools import wraps
 
+# Import ObjectId from bson
+from bson.objectid import ObjectId
+
 # Load environment variables from .env (only in development)
 from dotenv import load_dotenv
 
@@ -52,7 +55,7 @@ def token_required(f):
 
         try:
             data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
-            current_user = users_collection.find_one({"_id": pymongo.ObjectId(data['user_id'])})
+            current_user = users_collection.find_one({"_id": ObjectId(data['user_id'])})
             if not current_user:
                 app.logger.warning(f"User not found for user_id: {data['user_id']}")
                 raise Exception('User not found')
