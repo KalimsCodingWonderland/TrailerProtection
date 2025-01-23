@@ -38,7 +38,7 @@ document.getElementById('register-button').addEventListener('click', async () =>
     }
 
     try {
-        const response = await fetch("https://your-backend-domain.com/register", {  // Replace with your actual backend URL
+        const response = await fetch("https://trailer-protection.onrender.com/register", {  // Replace with your actual backend URL
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, email, password })
@@ -68,7 +68,7 @@ document.getElementById('login-button').addEventListener('click', async () => {
     }
 
     try {
-        const response = await fetch("https://your-backend-domain.com/login", {  // Replace with your actual backend URL
+        const response = await fetch("https://trailer-protection.onrender.com/login", {  // Replace with your actual backend URL
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
@@ -124,7 +124,7 @@ async function reportTrailer(type) {
     }
 
     try {
-        const response = await fetch("https://your-backend-domain.com/report_trailer", {  // Replace with your actual backend URL
+        const response = await fetch("https://trailer-protection.onrender.com/report_trailer", {  // Replace with your actual backend URL
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
